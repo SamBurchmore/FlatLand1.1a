@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="FlatLand1.0a:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b5c119b8-cf77-44b8-a83a-26bb30553e3a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/FlatLand1.0a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/FlatLand1.0a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/data/settings.dat" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/data/settings.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/attach.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/attach.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/awt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/awt.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/dt_shmem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/dt_shmem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/dt_socket.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/dt_socket.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/extnet.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/extnet.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/fontmanager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/fontmanager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/freetype.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/freetype.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/instrument.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/instrument.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/j2gss.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/j2gss.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/j2pcsc.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/j2pcsc.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/j2pkcs11.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/j2pkcs11.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jaas.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jaas.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jabswitch.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jabswitch.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jaccessinspector.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jaccessinspector.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jaccesswalker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jaccesswalker.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jar.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jar.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jarsigner.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jarsigner.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/java.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/java.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/java.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/java.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javaaccessbridge.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javaaccessbridge.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javac.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javac.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javadoc.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javadoc.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javajpeg.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javajpeg.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javap.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javap.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javaw.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/javaw.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jawt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jawt.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jcmd.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jcmd.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jconsole.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jconsole.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdb.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdb.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdeprscan.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdeprscan.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdeps.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdeps.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdwp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jdwp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jfr.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jfr.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jhsdb.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jhsdb.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jimage.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jimage.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jimage.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jimage.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jinfo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jinfo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jli.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jli.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jlink.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jlink.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jmap.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jmap.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jmod.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jmod.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jpackage.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jpackage.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jpackage.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jpackage.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jps.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jps.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jrunscript.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jrunscript.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jshell.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jshell.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jsound.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jsound.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jstack.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jstack.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jstat.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jstat.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jstatd.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jstatd.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jsvml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jsvml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jwebserver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/jwebserver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/keytool.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/keytool.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/kinit.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/kinit.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/klist.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/klist.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/ktab.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/ktab.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/lcms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/lcms.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/le.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/le.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/management.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/management.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/management_agent.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/management_agent.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/management_ext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/management_ext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/mlib_image.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/mlib_image.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/net.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/net.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/nio.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/nio.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/prefs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/prefs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/rmi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/rmi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/rmiregistry.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/rmiregistry.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/saproc.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/saproc.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/serialver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/serialver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/server/classes.jsa" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/server/classes.jsa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/server/classes_nocoops.jsa" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/server/classes_nocoops.jsa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/server/jvm.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/server/jvm.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/splashscreen.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/splashscreen.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/sspi_bridge.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/sspi_bridge.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/sunmscapi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/sunmscapi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/syslookup.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/syslookup.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/verify.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/verify.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/w2k_lsa_auth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/w2k_lsa_auth.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/windowsaccessbridge-64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/windowsaccessbridge-64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/zip.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/bin/zip.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/classfile_constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/classfile_constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jawt.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jawt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jdwpTransport.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jdwpTransport.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jni.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jni.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jvmticmlr.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/jvmticmlr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/sizecalc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/bridge/AccessBridgeCallbacks.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/bridge/AccessBridgeCallbacks.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/bridge/AccessBridgeCalls.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/bridge/AccessBridgeCalls.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/bridge/AccessBridgePackages.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/bridge/AccessBridgePackages.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/jawt_md.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/jawt_md.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/jni_md.h" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/jre/include/win32/jni_md.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlatLand1.0a-release/user_guide.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/FlatLand1.0a-release/user_guide.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AgentEditorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AgentEditorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DiagnosticsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DiagnosticsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/EnvironmentSettingsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/EnvironmentSettingsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/SimulationControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/SimulationControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StatGraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/TerrainSettingsDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TerrainSettingsDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/settings.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/settings.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_guide.docx" beforeDir="false" afterPath="$PROJECT_DIR$/user_guide.docx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/testResults" openResultsInEditor="true" userTempatePath="" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2Gif3ijxSuz7hFblJugXrbQaHhh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/4th Year/CS408_Project/FlatLand1.0a&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\4th Year\CS408_Project\CS408_GUI\src\Controller" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="UnitTests" />
+      <recent name="Simulation.Agent.AgentConcreteComponents" />
+      <recent name="Simulation.Agent" />
+      <recent name="Model.Agents.AgentConcreteComponents" />
+      <recent name="Simulation.Agent.AgentBaseComponents" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Simulation.Environment" />
+      <recent name="Simulation.Agent.AgentConcreteComponents" />
+      <recent name="WorldStructs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Simulation.Agent.AgentConcreteComponents" />
+      <recent name="View" />
+      <recent name="Model.Agents" />
+      <recent name="Model.Agents.AgentConcreteComponents" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="FlatLand1.0a" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicAttributesTest.testCalculateAttributes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlatLand1.0a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="UnitTests" />
+      <option name="MAIN_CLASS_NAME" value="UnitTests.BasicAttributesTest" />
+      <option name="METHOD_NAME" value="testCalculateAttributes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicAttributesTest.testMutateAttributesColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlatLand1.0a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="UnitTests" />
+      <option name="MAIN_CLASS_NAME" value="UnitTests.BasicAttributesTest" />
+      <option name="METHOD_NAME" value="testMutateAttributesColor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnvironmentTest.testGetTileColorTerrain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlatLand1.0a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="UnitTests" />
+      <option name="MAIN_CLASS_NAME" value="UnitTests.EnvironmentTest" />
+      <option name="METHOD_NAME" value="testGetTileColorTerrain" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocationTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlatLand1.0a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="UnitTests" />
+      <option name="MAIN_CLASS_NAME" value="UnitTests.LocationTest" />
+      <option name="METHOD_NAME" value="testEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BasicAttributesTest.testCalculateAttributes" />
+        <item itemvalue="JUnit.BasicAttributesTest.testMutateAttributesColor" />
+        <item itemvalue="JUnit.LocationTest.testEquals" />
+        <item itemvalue="JUnit.EnvironmentTest.testGetTileColorTerrain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5c119b8-cf77-44b8-a83a-26bb30553e3a" name="Default Changelist" comment="" />
+      <created>1666876127461</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666876127461</updated>
+      <workItem from="1666876128911" duration="4406000" />
+      <workItem from="1666906532568" duration="5571000" />
+      <workItem from="1666948583397" duration="146000" />
+      <workItem from="1667562572112" duration="9485000" />
+      <workItem from="1667674096311" duration="168000" />
+      <workItem from="1667913790521" duration="4982000" />
+      <workItem from="1667995396628" duration="3099000" />
+      <workItem from="1667999265000" duration="1013000" />
+      <workItem from="1668000306500" duration="2491000" />
+      <workItem from="1668011662203" duration="1056000" />
+      <workItem from="1668072853662" duration="14551000" />
+      <workItem from="1668168238243" duration="4091000" />
+      <workItem from="1668184596276" duration="961000" />
+      <workItem from="1668342683271" duration="5167000" />
+      <workItem from="1668348379395" duration="8637000" />
+      <workItem from="1668361932339" duration="9507000" />
+      <workItem from="1668372097200" duration="1827000" />
+      <workItem from="1668374314856" duration="561000" />
+      <workItem from="1668375464380" duration="1537000" />
+      <workItem from="1668602250693" duration="37000" />
+      <workItem from="1668772315207" duration="15697000" />
+      <workItem from="1668805922433" duration="8697000" />
+      <workItem from="1668818752174" duration="2236000" />
+      <workItem from="1668821133979" duration="2062000" />
+      <workItem from="1668858467581" duration="17553000" />
+      <workItem from="1668889963678" duration="5642000" />
+      <workItem from="1668899282294" duration="906000" />
+      <workItem from="1668900875814" duration="4254000" />
+      <workItem from="1668956388590" duration="8664000" />
+      <workItem from="1668975631915" duration="7771000" />
+      <workItem from="1668983603285" duration="10414000" />
+      <workItem from="1669025551342" duration="9986000" />
+      <workItem from="1669122365761" duration="19258000" />
+      <workItem from="1669142452707" duration="2647000" />
+      <workItem from="1669158917882" duration="9549000" />
+      <workItem from="1669201680100" duration="34326000" />
+      <workItem from="1669387807231" duration="4200000" />
+      <workItem from="1669396311071" duration="24173000" />
+      <workItem from="1669421388648" duration="6519000" />
+      <workItem from="1669889918399" duration="1132000" />
+      <workItem from="1670328906722" duration="663000" />
+      <workItem from="1670604883483" duration="616000" />
+      <workItem from="1671220342424" duration="602000" />
+      <workItem from="1671278491385" duration="1343000" />
+      <workItem from="1671280807147" duration="3032000" />
+      <workItem from="1671284162398" duration="2667000" />
+      <workItem from="1673012807792" duration="5878000" />
+      <workItem from="1673270757290" duration="9883000" />
+      <workItem from="1673352704283" duration="12833000" />
+      <workItem from="1673440372571" duration="369000" />
+      <workItem from="1673456033795" duration="644000" />
+      <workItem from="1673883298358" duration="11588000" />
+      <workItem from="1673964300960" duration="8779000" />
+      <workItem from="1674041521355" duration="1830000" />
+      <workItem from="1674057754941" duration="7609000" />
+      <workItem from="1674069588660" duration="2603000" />
+      <workItem from="1674575452434" duration="20828000" />
+      <workItem from="1674646236757" duration="23890000" />
+      <workItem from="1674742851138" duration="30467000" />
+      <workItem from="1674827225934" duration="595000" />
+      <workItem from="1674843389843" duration="275000" />
+      <workItem from="1674934746693" duration="920000" />
+      <workItem from="1675091158680" duration="873000" />
+      <workItem from="1675095215787" duration="283000" />
+      <workItem from="1675095815094" duration="155000" />
+      <workItem from="1675095983980" duration="373000" />
+      <workItem from="1675098757615" duration="25827000" />
+      <workItem from="1675174733513" duration="1947000" />
+      <workItem from="1675182124796" duration="27975000" />
+      <workItem from="1675260400355" duration="32129000" />
+      <workItem from="1675348233681" duration="19503000" />
+      <workItem from="1675370669469" duration="7077000" />
+      <workItem from="1675423838544" duration="115000" />
+      <workItem from="1675692810562" duration="20131000" />
+      <workItem from="1675780304529" duration="9151000" />
+      <workItem from="1675862535778" duration="6297000" />
+      <workItem from="1675950076142" duration="29015000" />
+      <workItem from="1675989564571" duration="330000" />
+      <workItem from="1676032473451" duration="4126000" />
+      <workItem from="1676114206246" duration="6757000" />
+      <workItem from="1676206352889" duration="3167000" />
+      <workItem from="1676298416782" duration="31206000" />
+      <workItem from="1676380903031" duration="54000" />
+      <workItem from="1676388661446" duration="12496000" />
+      <workItem from="1676481750064" duration="24400000" />
+      <workItem from="1676553026498" duration="26751000" />
+      <workItem from="1676722466699" duration="8690000" />
+      <workItem from="1676816255861" duration="10321000" />
+      <workItem from="1676906425617" duration="29339000" />
+      <workItem from="1676942010468" duration="584000" />
+      <workItem from="1676985263488" duration="40041000" />
+      <workItem from="1677072195572" duration="25250000" />
+      <workItem from="1677157157117" duration="9143000" />
+      <workItem from="1677583262327" duration="10315000" />
+      <workItem from="1677683392695" duration="6852000" />
+      <workItem from="1677771268512" duration="5121000" />
+      <workItem from="1677855942220" duration="4024000" />
+      <workItem from="1677937129717" duration="600000" />
+      <workItem from="1677937811883" duration="388000" />
+      <workItem from="1678026381286" duration="22521000" />
+      <workItem from="1678635485984" duration="1587000" />
+      <workItem from="1678641278799" duration="1260000" />
+      <workItem from="1678721079209" duration="3338000" />
+      <workItem from="1678735569649" duration="6729000" />
+    </task>
+    <task id="LOCAL-00001" summary="added some methods">
+      <created>1668354392375</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668354392375</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added some methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some methods" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/View/EnvironmentSettingsPanel.java</url>
+          <line>308</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Simulation/Diagnostics/Diagnostics.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="29" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="wt_iterator" />
+        <watch expression="this.worldGrid.grid[10]" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CS408_alpha$Main.ic" NAME="Main Coverage Results" MODIFIED="1668893479051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
