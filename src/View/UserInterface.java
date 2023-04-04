@@ -28,6 +28,10 @@ public class UserInterface extends JFrame {
     private final JButton loadEnvironmentSettingsMenuButton;
     private final JButton saveSettingsMenuButton;
     private final JButton loadSettingsMenuButton;
+    private final JButton loadTerrainSettingsMenuButton;
+    private final JButton saveTerrainSettingsMenuButton;
+    private final JButton saveTerrainMenuButton;
+    private final JButton loadTerrainMenuButton;
 
     private final JButton preset1Button;
     private final JButton preset2Button;
@@ -79,19 +83,28 @@ public class UserInterface extends JFrame {
 
         // Build the save menu
         saveSettingsMenuButton = new JButton("Save Settings");
-        saveMenu.add(saveSettingsMenuButton);
         saveAgentsMenuButton = new JButton("Save Agents");
         saveEnvironmentSettingsMenuButton = new JButton("Save Environment");
+        saveTerrainSettingsMenuButton = new JButton("Save Terrain Settings");
+        saveTerrainMenuButton = new JButton("Save Terrain");
+        saveMenu.add(saveSettingsMenuButton);
         saveMenu.add(saveAgentsMenuButton);
         saveMenu.add(saveEnvironmentSettingsMenuButton);
+        saveMenu.add(saveTerrainSettingsMenuButton);
+        saveMenu.add(saveTerrainMenuButton);
 
         // Build the load menu
         loadSettingsMenuButton = new JButton("Load Settings");
-        loadMenu.add(loadSettingsMenuButton);
         loadAgentsMenuButton = new JButton("Load Agents");
         loadEnvironmentSettingsMenuButton = new JButton("Load Environment");
+        loadTerrainSettingsMenuButton = new JButton("Load Terrain Settings");
+        loadTerrainMenuButton = new JButton("Load Terrain");
+        loadMenu.add(loadSettingsMenuButton);
         loadMenu.add(loadAgentsMenuButton);
         loadMenu.add(loadEnvironmentSettingsMenuButton);
+        loadMenu.add(loadTerrainSettingsMenuButton);
+        loadMenu.add(loadTerrainMenuButton);
+
 
         // Build the presets menu
         preset1Button = new JButton("Rainbow");
@@ -300,5 +313,21 @@ public class UserInterface extends JFrame {
 
     public JButton getPreset6Button() {
         return preset6Button;
+    }
+
+    public JButton getLoadTerrainSettingsMenuButton() {
+        return loadTerrainSettingsMenuButton;
+    }
+
+    public JButton getSaveTerrainSettingsMenuButton() {
+        return saveTerrainSettingsMenuButton;
+    }
+
+    public JButton getSaveTerrainMenuButton() {
+        return saveTerrainMenuButton;
+    }
+
+    public JButton getLoadTerrainMenuButton() {
+        return loadTerrainMenuButton;
     }
 }

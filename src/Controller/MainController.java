@@ -1,10 +1,7 @@
 package Controller;
 
 import Simulation.Simulation;
-import Simulation.SimulationUtility.SimulationSettings.ActiveAgentsSettings;
-import Simulation.SimulationUtility.SimulationSettings.AgentSettings;
-import Simulation.SimulationUtility.SimulationSettings.EnvironmentSettings;
-import Simulation.SimulationUtility.SimulationSettings.SimulationSettings;
+import Simulation.SimulationUtility.SimulationSettings.*;
 import View.UserInterface;
 import org.apache.commons.io.FilenameUtils;
 
@@ -71,7 +68,7 @@ public class MainController {
         this.simulationController = new SimulationController();
         simulationController.initDiagnostics();
         initController();
-        fileHandler.loadOnOpen();
+        //fileHandler.loadOnOpen();
         viewController.initView();
         viewController.deleteLoadingDialog();
         this.runFlag = false;
@@ -117,6 +114,10 @@ public class MainController {
         userInterface.getLoadEnvironmentSettingsMenuButton().addActionListener(e -> fileHandler.loadEnvironment());
         userInterface.getSaveSettingsMenuButton().addActionListener(e -> fileHandler.saveSettings());
         userInterface.getLoadSettingsMenuButton().addActionListener(e -> fileHandler.loadSettings());
+        userInterface.getLoadTerrainSettingsMenuButton().addActionListener(e -> fileHandler.loadTerrainSettings());
+        userInterface.getSaveTerrainSettingsMenuButton().addActionListener(e -> fileHandler.saveTerrainSettings());
+        userInterface.getSaveTerrainMenuButton().addActionListener(e -> fileHandler.saveTerrainMask());
+        userInterface.getLoadTerrainMenuButton().addActionListener(e -> fileHandler.loadTerrainMask());
         userInterface.getToggleControlsButton().addActionListener(e -> viewController.toggleControls());
         userInterface.getTerrainSettings().addActionListener(e -> viewController.openTerrainSettings());
         userInterface.getClearTerrain().addActionListener(e -> simulationController.clearTerrain());
@@ -403,7 +404,6 @@ public class MainController {
          * paints a cave on the environment.
          */
         public void paintCave() {
-            simulation.getTerrainGenerator().generateCave();
             viewController.updateSimulationView();
             viewController.logMsg("[TERRAIN]: Cave generated with - \n" + simulation.getTerrainGenerator().getTerrainSettings().toString());
         }
@@ -412,7 +412,6 @@ public class MainController {
          * Generates a cave system on the environment.
          */
         public void paintCaveSystem() {
-            simulation.getTerrainGenerator().generateGraphCave();
             viewController.updateSimulationView();
             viewController.logMsg("[TERRAIN]: Cave System generated with - \n" + simulation.getTerrainGenerator().getTerrainSettings().toString());
         }
@@ -781,6 +780,129 @@ public class MainController {
                         objectInputStream.close();
 
                         viewController.logMsg("[SYSTEM]: Environment Loaded.");
+                    } catch (IOException | ClassNotFoundException | ClassCastException e) {
+                        viewController.logMsg("[SYSTEM]: Something went wrong and the file could not be read.");
+                    }
+                } else {
+                    viewController.logMsg("[SYSTEM]: File type must be .dat.");
+                }
+            }
+        }
+
+        public void saveTerrainMask() {
+            if (runFlag) {
+                viewController.logMsg("[SYSTEM]: Please pause the simulation first.");
+                return;
+            }
+            if (userInterface.getFileChooser().showSaveDialog(userInterface) == JFileChooser.APPROVE_OPTION) { // User has provided a path
+                File file = userInterface.getFileChooser().getSelectedFile();
+                if (FilenameUtils.getExtension(file.getPath()).equals("dat")) {
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(file);
+                        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+                        ObjectOutputStream objectOutputStream = new ObjectOutputStream(bufferedOutputStream);
+
+                        Boolean[] terrainMask = simulation.getEnvironment().getTerrainMask();
+
+                        objectOutputStream.writeObject(terrainMask);
+                        objectOutputStream.close();
+
+                        viewController.logMsg("[SYSTEM]: Terrain Saved.");
+
+                    } catch (IOException e) {
+                        viewController.logMsg("[SYSTEM]: Something has gone wrong, unable to save file.");
+                    }
+                } else {
+                    viewController.logMsg("[SYSTEM]: File type must be .dat.");
+                }
+            }
+        }
+
+        /**
+         * Asks the user for a location and then tries to load the agent environment found there.
+         */
+        public void loadTerrainMask() {
+            if (runFlag) {
+                viewController.logMsg("[SYSTEM]: Please pause the simulation first.");
+                return;
+            }
+            if (userInterface.getFileChooser().showOpenDialog(userInterface) == JFileChooser.APPROVE_OPTION) { // User has provided a path
+                File file = userInterface.getFileChooser().getSelectedFile();
+                if (FilenameUtils.getExtension(file.getPath()).equals("dat")) {
+                    try {
+                        FileInputStream fileInputStream = new FileInputStream(file);
+                        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+                        ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
+
+                        Boolean[] terrainMask = (Boolean[]) objectInputStream.readObject();
+                        simulation.getTerrainGenerator().paintTerrainMask(terrainMask);
+                        viewController.updateView();
+
+                        objectInputStream.close();
+
+                        viewController.logMsg("[SYSTEM]: Terrain Loaded.");
+                    } catch (IOException | ClassNotFoundException | ClassCastException e) {
+                        viewController.logMsg("[SYSTEM]: Something went wrong and the file could not be read.");
+                    }
+                } else {
+                    viewController.logMsg("[SYSTEM]: File type must be .dat.");
+                }
+            }
+        }
+
+        public void saveTerrainSettings() {
+            if (runFlag) {
+                viewController.logMsg("[SYSTEM]: Please pause the simulation first.");
+                return;
+            }
+            if (userInterface.getFileChooser().showSaveDialog(userInterface) == JFileChooser.APPROVE_OPTION) { // User has provided a path
+                File file = userInterface.getFileChooser().getSelectedFile();
+                if (FilenameUtils.getExtension(file.getPath()).equals("dat")) {
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(file);
+                        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+                        ObjectOutputStream objectOutputStream = new ObjectOutputStream(bufferedOutputStream);
+
+                        TerrainSettings terrainSettings = simulation.getTerrainGenerator().getTerrainSettings();
+
+                        objectOutputStream.writeObject(terrainSettings);
+                        objectOutputStream.close();
+
+                        viewController.logMsg("[SYSTEM]: Terrain Settings Saved.");
+
+                    } catch (IOException e) {
+                        viewController.logMsg("[SYSTEM]: Something has gone wrong, unable to save file.");
+                    }
+                } else {
+                    viewController.logMsg("[SYSTEM]: File type must be .dat.");
+                }
+            }
+        }
+
+        /**
+         * Asks the user for a location and then tries to load the agent environment found there.
+         */
+        public void loadTerrainSettings() {
+            if (runFlag) {
+                viewController.logMsg("[SYSTEM]: Please pause the simulation first.");
+                return;
+            }
+            if (userInterface.getFileChooser().showOpenDialog(userInterface) == JFileChooser.APPROVE_OPTION) { // User has provided a path
+                File file = userInterface.getFileChooser().getSelectedFile();
+                if (FilenameUtils.getExtension(file.getPath()).equals("dat")) {
+                    try {
+                        FileInputStream fileInputStream = new FileInputStream(file);
+                        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+                        ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
+
+                        TerrainSettings terrainSettings = (TerrainSettings) objectInputStream.readObject();
+                        simulationController.clearAgents();
+                        simulation.getTerrainGenerator().setTerrainSettings(terrainSettings);
+                        viewController.updateView();
+
+                        objectInputStream.close();
+
+                        viewController.logMsg("[SYSTEM]: Terrain Settings Loaded.");
                     } catch (IOException | ClassNotFoundException | ClassCastException e) {
                         viewController.logMsg("[SYSTEM]: Something went wrong and the file could not be read.");
                     }

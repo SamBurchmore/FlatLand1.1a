@@ -14,6 +14,7 @@ import Simulation.SimulationUtility.Diagnostics;
 import Simulation.SimulationUtility.SimulationSettings.EnvironmentSettings;
 import Simulation.SimulationUtility.SimulationSettings.SimulationSettings;
 import Simulation.SimulationUtility.SimulationSettings.TerrainSettings;
+import Simulation.SimulationUtility.Terrain.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,7 +32,7 @@ import java.util.stream.IntStream;
  */
 public class Simulation {
     // The instance of the environment class
-    private final Environment environment;
+    private Environment environment;
     // Here we store all the agents currently in the simulation
     private ArrayList<Agent> agentList;
     // All newly born and surviving agents from each cycle are placed in here. At the end agentList is set to this
@@ -57,6 +58,10 @@ public class Simulation {
         this.agentEditor = new AgentEditor();
         this.agentLogic = new AgentLogic();
         this.terrainGenerator = new TerrainGenerator();
+        Square square = new Square(true, new Circle(true, new Point(true), 2), 5);
+        VariableBasicLine variableLine = new VariableBasicLine(true, new CircleCluster(true, new Point(true), 10, 10000), 300, new Direction(1, 1), new Variance(10, 5, 10));
+        //RandomLine randomLine = new RandomLine(true, variableLine, 300, new Direction(0, 1));
+        terrainGenerator.paintTerrain(variableLine, new Location(100, 100));
     }
 
     /**
@@ -438,165 +443,9 @@ public class Simulation {
             }
         }
 
-        public void generateCave() {
-            for (int j = 0; j < terrainSettings.caveAmount(); j++) {
-                int dx = 0;
-                int dy = 0;
-                int dx2 = 0;
-                int dy2 = 0;
-                Location location = new Location(environment.getSize() / 6 + random.nextInt(environment.getSize() - environment.getSize() / 3), environment.getSize() / 6 + random.nextInt(environment.getSize() - environment.getSize() / 3));
-                int caveSize = terrainSettings.lowerCaveSize();
-                for (int i = 0; i < terrainSettings.caveLength() / (terrainSettings.caveWave() * 2); i++) {
-                    int cw = random.nextInt(terrainSettings.caveWave());
-                    for (int c = -cw; c < cw; c++) {
-                        if (c < 0) {
-                            caveSize += terrainSettings.upperCaveSize() / cw;
-                        } else {
-                            caveSize -= terrainSettings.upperCaveSize() / cw;
-                        }
-                        if (random.nextInt(10000) < terrainSettings.bendDensity()) {
-                            dx2 = getPosNegRandom(terrainSettings.lowerCaveSize() + 1);
-                            dy2 = getPosNegRandom(terrainSettings.lowerCaveSize() + 1);
-                        }
-                        dx = dx + dx2;
-                        dy = dy + dy2;
-                        Location caveLocation = new Location(location.getX() + dx, location.getY() + dy);
-                        if (environment.isLocationOnGrid(caveLocation)) {
-                            if (random.nextInt(10000) < terrainSettings.caveWeight()) {
-                                generateCircleRockCluster(terrainSettings.rockSize(), caveSize, terrainSettings.caveDensity(), caveLocation);
-                            }
-                        } else {
-                            dx = dx - dx2;
-                            dy = dy - dy2;
-                        }
-                    }
-                }
-            }
+        public void paintTerrain(Terrain terrain, Location location) {
+            environment = terrain.paint(environment, location);
         }
-
-        public void generateGraphBranchCave(Location seedLocation, int dx, int dy, int level, boolean firstLevel) {
-            if (!firstLevel) {
-                generateCircleRockCluster(terrainSettings.upperCaveSize(), terrainSettings.upperCaveSize() + random.nextInt(Math.max(terrainSettings.cavernSize() - terrainSettings.upperCaveSize(), 1)), terrainSettings.caveDensity(), seedLocation);
-            }
-            Location caveLocation = new Location(seedLocation.getX() + dx, seedLocation.getY() + dy);
-            for (int j = 0; j < terrainSettings.caveAmount(); j++) {
-                int dx2 = 0;
-                int dy2 = 0;
-                int caveSize = terrainSettings.lowerCaveSize();
-                int straightCounter = 0;
-                for (int i = 0; i < terrainSettings.caveLength() / (terrainSettings.caveWave() * 2); i++) {
-                    int cw = random.nextInt(terrainSettings.caveWave());
-                    for (int c = -cw; c < cw; c++) {
-                        if (c < 0) {
-                            caveSize += terrainSettings.upperCaveSize() / cw;
-                        } else {
-                            caveSize -= terrainSettings.upperCaveSize() / cw;
-                        }
-                        if (straightCounter > terrainSettings.cavernSize() && random.nextInt(10000) < terrainSettings.bendDensity()) {
-                            if (random.nextInt(2) == 0) {
-                                dx2 = getPosNegRandom(terrainSettings.rockSize());
-                                dx = dx2;
-
-                            } else {
-                                dy2 = getPosNegRandom(terrainSettings.rockSize());
-                                dy = dy2;
-                            }
-                        }
-                        caveLocation.setX(caveLocation.getX() + dx);
-                        caveLocation.setY(caveLocation.getY() + dy);
-                        if (environment.isLocationOnGrid(caveLocation)) {
-                            if (random.nextInt(10000) < terrainSettings.caveWeight()) {
-                                generateCircleRockCluster(terrainSettings.rockSize(), caveSize, terrainSettings.caveDensity(), caveLocation);
-                            }
-                        } else {
-                            dx = dx - dx2;
-                            dy = dy - dy2;
-                        }
-                        straightCounter++;
-                    }
-                }
-            }
-            if (level > 0) {
-                generateGraphBranchCave(caveLocation, getPosNegRandom(terrainSettings.rockSize()), getPosNegRandom(terrainSettings.rockSize()), level - 1, false);
-
-            }
-        }
-
-        public void generateGraphCave() {
-            Location seedLocation = new Location(environment.getSize() / 4 + random.nextInt(environment.getSize() - environment.getSize() / 2), environment.getSize() / 4 + random.nextInt(environment.getSize() - environment.getSize() / 2));
-            generateCircleRockCluster(terrainSettings.rockSize(), terrainSettings.cavernSize(), terrainSettings.caveDensity(), seedLocation);
-            int bx = 1;
-            int by = 1;
-            for (int i = -bx; i <= bx; i++) {
-                for (int j = -by; j <= by; j++) {
-                    if (random.nextInt(4) < 3) {
-                        generateGraphBranchCave(seedLocation, i, j, 5, true);
-                    }
-                }
-            }
-        }
-
-        /**
-         * Paints a circle pattern of terrain flags centered at the specified location.
-         * <p>
-         * Iterates in a square pattern centered on the location specified. Works similarly to AgentLogic.lookAround(Agent).
-         * If a tile satisfies the formula: (x-x1)^2 + (y-x1)^2 = r^2 then set its terrain flag to true, where (x, y) are the center
-         * coordinates and (x1, y1) are the subject coordinates.
-         *
-         * @param rockSize the circles radius
-         * @param location the location to paint at.
-         */
-        public void generateCircleRock(int rockSize, Location location) {
-            int seedX = location.getX();
-            int seedY = location.getY();
-            int x1;
-            int y1;
-            for (int x = -rockSize; x <= rockSize; x++) {
-                for (int y = -rockSize; y <= rockSize; y++) {
-                    x1 = seedX + x;
-                    y1 = seedY + y;
-                    if (((x1 < environment.getSize())
-                            && (y1 < environment.getSize()))
-                            && ((x1 >= 0) && (y1 >= 0))
-                            && ((x1 - seedX) * (x1 - seedX) + (y1 - seedY) * (y1 - seedY)) <= rockSize * rockSize
-                    ) {
-                        environment.setTileTerrain(new Location(x1, y1), terrainSettings.isTerrain());
-                    }
-                }
-            }
-        }
-
-        /**
-         * Paints a cluster of circles centered at the specified location.
-         * <p>
-         * Uses the same algorithm as the generateCircleRock() method, but instead of setting every tile to terrain, it will try to paint
-         * a circle centered on the tile. The success of this is decided by the clusterDensity parameter.
-         *
-         * @param rockSize       the circles radius
-         * @param clusterSize    the cluster radius
-         * @param clusterDensity the likelihood a circle will be placed at each tile.
-         * @param location       the location to paint at.
-         */
-        public void generateCircleRockCluster(int rockSize, int clusterSize, int clusterDensity, Location location) {
-            int seedX = location.getX();
-            int seedY = location.getY();
-            int x1;
-            int y1;
-            for (int x = -clusterSize; x <= clusterSize; x++) {
-                for (int y = -clusterSize; y <= clusterSize; y++) {
-                    x1 = seedX + x;
-                    y1 = seedY + y;
-                    if (((x1 < environment.getSize())
-                            && (y1 < environment.getSize()))
-                            && ((x1 >= 0) && (y1 >= 0))
-                            && ((x1 - seedX) * (x1 - seedX) + (y1 - seedY) * (y1 - seedY)) <= clusterSize * clusterSize
-                            && random.nextInt(10000) < clusterDensity
-                    ) {
-                        generateCircleRock(rockSize, new Location(x1, y1));
-                    }
-                }
-            }
-        } // Places one cluster
 
         public TerrainSettings getTerrainSettings() {
             return terrainSettings;

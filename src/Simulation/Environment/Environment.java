@@ -3,6 +3,8 @@ package Simulation.Environment;
 import Simulation.Agent.AgentInterfaces.Agent;
 import Simulation.Agent.AgentStructs.AgentVision;
 import Simulation.SimulationUtility.SimulationSettings.EnvironmentSettings;
+import Simulation.SimulationUtility.Terrain.Terrain;
+import Simulation.SimulationUtility.Terrain.TerrainMask;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -77,6 +79,18 @@ public class Environment implements Serializable {
         this.minEnergyLevel = minEnergyLevel;
         this.energyRegenAmount = energyRegenAmount;
         this.energyRegenChance = energyRegenChance;
+    }
+
+    public void paintMask(TerrainMask terrainMask) {
+        Location location = terrainMask.getLocation();
+        int size = terrainMask.getSize();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                setTileTerrain(location, true);
+                location.setX(location.getX() + 1);
+            }
+            location.setY(location.getY() + 1);
+        }
     }
 
     /**
