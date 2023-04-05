@@ -1,6 +1,7 @@
 package Simulation.SimulationUtility.Terrain;
 
 public class Variance {
+
     private int upper;
     private int lower;
     private int changeRate;

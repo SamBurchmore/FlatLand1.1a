@@ -404,6 +404,7 @@ public class MainController {
          * paints a cave on the environment.
          */
         public void paintCave() {
+            simulation.getTerrainGenerator().paintTerrain();
             viewController.updateSimulationView();
             viewController.logMsg("[TERRAIN]: Cave generated with - \n" + simulation.getTerrainGenerator().getTerrainSettings().toString());
         }

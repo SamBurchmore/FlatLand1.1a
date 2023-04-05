@@ -3,19 +3,17 @@ package Simulation.SimulationUtility.Terrain;
 import Simulation.Environment.Environment;
 import Simulation.Environment.Location;
 
-public class Circle extends CompositeTerrain {
+public class Circle extends BaseTerrainShape {
 
-    private int size;
-
-    public Circle(boolean paintOrClear, Terrain terrain, int size) {
-        super(paintOrClear, terrain);
-        this.size = size;
+    public Circle(Terrain terrainComponent, int size) {
+        super(terrainComponent, size);
     }
 
     @Override
-    public Environment paint(Environment environment, Location location) {
+    public TerrainFrame paint(TerrainFrame terrainFrame, Location location, boolean paintFlag) {
         int seedX = location.getX();
         int seedY = location.getY();
+        int size = super.getSize();
         int x1;
         int y1;
         for (int x = -size; x <= size; x++) {
@@ -23,22 +21,20 @@ public class Circle extends CompositeTerrain {
                 x1 = seedX + x;
                 y1 = seedY + y;
                 if (
-                        environment.isLocationOnGrid(new Location(x1, y1))
+                        terrainFrame.getEnvironment().isLocationOnGrid(new Location(x1, y1))
                         && ((x1 - seedX) * (x1 - seedX) + (y1 - seedY) * (y1 - seedY)) <= size * size
                 ) {
-                    environment = super.getTerrain().paint(environment, new Location(x1, y1));
+                    location.setX(x1);
+                    location.setY(y1);
+                    terrainFrame = super.getTerrainComponent().paint(terrainFrame, location, paintFlag);
                 }
             }
         }
-        return environment;
+        return terrainFrame;
     }
 
     @Override
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getSize() {
-        return size;
+    public Terrain copy() {
+        return new Circle(super.getTerrainComponent(), super.getSize());
     }
 }

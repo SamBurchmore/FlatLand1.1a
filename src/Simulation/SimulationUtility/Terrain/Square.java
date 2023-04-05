@@ -3,38 +3,36 @@ package Simulation.SimulationUtility.Terrain;
 import Simulation.Environment.Environment;
 import Simulation.Environment.Location;
 
-public class Square extends CompositeTerrain {
+public class Square extends BaseTerrainShape {
 
-    private int size;
-
-    public Square(boolean paintOrClear, Terrain terrain, int size) {
-        super(paintOrClear, terrain);
-        this.size = size;
+    public Square(Terrain terrainComponent, int size) {
+        super(terrainComponent, size);
     }
 
     @Override
-    public Environment paint(Environment environment, Location location) {
+    public TerrainFrame paint(TerrainFrame terrainFrame, Location location, boolean paintFlag) {
         int seedX = location.getX();
         int seedY = location.getY();
+        int size = super.getSize();
         int x1;
         int y1;
         for (int x = -size; x <= size; x++) {
             for (int y = -size; y <= size; y++) {
                 x1 = seedX + x;
                 y1 = seedY + y;
-                if (environment.isLocationOnGrid(new Location(x1, y1))) {
-                    environment = super.getTerrain().paint(environment, new Location(x1, y1));
+                if (terrainFrame.getEnvironment().isLocationOnGrid(new Location(x1, y1))) {
+                    location.setX(x1);
+                    location.setY(y1);
+                    terrainFrame = super.getTerrainComponent().paint(terrainFrame, location, paintFlag);
                 }
             }
         }
-        return environment;
+        terrainFrame.setPointer(location);
+        return terrainFrame;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getSize() {
-        return size;
+    @Override
+    public Terrain copy() {
+        return new Square(super.getTerrainComponent(), super.getSize());
     }
 }

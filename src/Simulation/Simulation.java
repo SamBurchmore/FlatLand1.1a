@@ -58,10 +58,6 @@ public class Simulation {
         this.agentEditor = new AgentEditor();
         this.agentLogic = new AgentLogic();
         this.terrainGenerator = new TerrainGenerator();
-        Square square = new Square(true, new Circle(true, new Point(true), 2), 5);
-        VariableBasicLine variableLine = new VariableBasicLine(true, new CircleCluster(true, new Point(true), 10, 10000), 300, new Direction(1, 1), new Variance(10, 5, 10));
-        //RandomLine randomLine = new RandomLine(true, variableLine, 300, new Direction(0, 1));
-        terrainGenerator.paintTerrain(variableLine, new Location(100, 100));
     }
 
     /**
@@ -408,6 +404,11 @@ public class Simulation {
      */
     public class TerrainGenerator {
 
+        ClusterCircle clusterCircle = new ClusterCircle(new Circle(new Point(), 3), 4, 2500);
+        BasicLine basicLine = new BasicLine(new Circle(new Point(), 4), 10, new Direction(1, 1));
+        RandomVariableBasicLine randomVariableBasicLine = new RandomVariableBasicLine(clusterCircle, 10, new Direction(1, 1), new Variance(6, 4, 4));
+        BendingCompoundLine bendingCompoundLine = new BendingCompoundLine(randomVariableBasicLine, 20, new Direction(6, 6), 10000);
+
         // The TerrainSettings object that stores the initial and current terrain settings
         private TerrainSettings terrainSettings;
         private final Random random;
@@ -443,8 +444,8 @@ public class Simulation {
             }
         }
 
-        public void paintTerrain(Terrain terrain, Location location) {
-            environment = terrain.paint(environment, location);
+        public void paintTerrain() {
+            environment = bendingCompoundLine.paint(new TerrainFrame(environment, null), new Location(random.nextInt(600), random.nextInt(600)), true).getEnvironment();
         }
 
         public TerrainSettings getTerrainSettings() {

@@ -3,69 +3,31 @@ package Simulation.SimulationUtility.Terrain;
 import Simulation.Environment.Environment;
 import Simulation.Environment.Location;
 
-public class BasicLine implements Line {
+public class BasicLine extends BaseLine {
 
-    private int size;
-    private Direction direction;
-    private boolean paintOrClear;
-    private Terrain terrain;
 
-    public BasicLine(boolean paintOrClear, Terrain terrain, int size, Direction direction) {
-        this.size = size;
-        this.direction = direction;
-        this.terrain = terrain;
-        this.paintOrClear = paintOrClear;
+    public BasicLine(Terrain terrainComponent, int size, Direction direction) {
+        super(terrainComponent, size, direction);
     }
 
     @Override
-    public Environment paint(Environment environment, Location location) {
-        Location pointer = location;
-        for (int i = 0; i < size; i++) {
-            if (environment.isLocationOnGrid(pointer)) {
-                environment = terrain.paint(environment, pointer);
-                pointer.setX(pointer.getX() + direction.dx());
-                pointer.setY(pointer.getY() + direction.dy());
+    public TerrainFrame paint(TerrainFrame terrainFrame, Location location, boolean paintFlag) {
+        for (int i = 0; i < super.getSize(); i++) {
+            if (terrainFrame.getEnvironment().isLocationOnGrid(location)) {
+                terrainFrame = super.getTerrainComponent().paint(terrainFrame, location, paintFlag);
+                location.setX(location.getX() + super.getDirection().getDx());
+                location.setY(location.getY() + super.getDirection().getDy());
             }
             else {
                 break;
             }
         }
-        return environment;
-    }
-
-    @Override
-    public void setPaintOrClear(boolean paintOrClear) {
-        this.paintOrClear = paintOrClear;
-    }
-
-    @Override
-    public boolean isTerrain() {
-        return paintOrClear;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    @Override
-    public boolean getPaintOrClear() {
-        return paintOrClear;
+        terrainFrame.setPointer(location);
+        return terrainFrame;
     }
 
     @Override
     public Terrain copy() {
-        return null;
-    }
-
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public Direction getDirection() {
-        return direction;
+        return new BasicLine(super.getTerrainComponent(), super.getSize(), super.getDirection());
     }
 }

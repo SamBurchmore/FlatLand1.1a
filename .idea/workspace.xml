@@ -14,42 +14,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5c119b8-cf77-44b8-a83a-26bb30553e3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/BasicLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Bend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/CircleCluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/CompositeLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/CompositeTerrain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/RandomBend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/RandomLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Terrain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/TerrainMask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/VariableBasicLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Variance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/BaseLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/BaseTerrainShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/BendingCompoundLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/ChainShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/ClusterCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/CompoundLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/NaturalLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/RandomVariableBasicLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/TerrainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/TerrainShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$SimulationController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$SimulationController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$SimulationController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$SimulationController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$SimulationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$SimulationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController$ViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Environment/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Environment/Environment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Simulation$AgentLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Simulation$AgentLogic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Simulation$TerrainGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Simulation$TerrainGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/Simulation/Simulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/View/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/View/UserInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FlatLand1.0a/data/settings.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FlatLand1.0a/data/settings.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Simulation/Environment/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/Environment/Environment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/BasicLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/BasicLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/CircleCluster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/CompositeLine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/CompositeTerrain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/RandomBend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Randomizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Terrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/VariableBasicLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/VariableBasicLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Variance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation/SimulationUtility/Terrain/Variance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/settings.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/settings.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +61,7 @@
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -99,7 +94,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/0_beans/FlatLand1.1a&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/FlatLand1.1a&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -133,6 +128,7 @@
       <recent name="WorldStructs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Simulation.SimulationUtility.Terrain" />
       <recent name="Simulation.Agent.AgentConcreteComponents" />
       <recent name="View" />
       <recent name="Model.Agents" />
@@ -339,6 +335,9 @@
       <workItem from="1680386883982" duration="1289000" />
       <workItem from="1680388986829" duration="513000" />
       <workItem from="1680437213367" duration="10966000" />
+      <workItem from="1680612027377" duration="8180000" />
+      <workItem from="1680629068821" duration="2260000" />
+      <workItem from="1680702259237" duration="4783000" />
     </task>
     <task id="LOCAL-00001" summary="added some methods">
       <created>1668354392375</created>

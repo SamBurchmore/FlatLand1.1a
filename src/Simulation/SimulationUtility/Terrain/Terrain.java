@@ -5,15 +5,7 @@ import Simulation.Environment.Location;
 
 public interface Terrain {
 
-    Environment paint(Environment environment, Location location);
-
-    void setPaintOrClear(boolean paintOrClear);
-
-    boolean isTerrain();
-
-    void setSize(int size);
-
-    boolean getPaintOrClear();
+    TerrainFrame paint(TerrainFrame terrainFrame, Location location, boolean paintFlag);
 
     Terrain copy();
 
