@@ -13,6 +13,9 @@ public class RandomVariableBasicLine extends VariableBasicLine {
 
     @Override
     public TerrainFrame paint(TerrainFrame terrainFrame, Location location, boolean paintFlag) {
+//        if (super.getDirection().getDx() == 0 && super.getDirection().getDy() == 0) {
+//            return terrainFrame;
+//        }
         int size = super.getVariance().getLower();
         for (int i = 0; i < super.getSize() / (super.getVariance().getChangeRate() * 2); i++) {
             int randomChangeRate = randomizer.nextInt(super.getVariance().getChangeRate());
@@ -24,12 +27,11 @@ public class RandomVariableBasicLine extends VariableBasicLine {
                         size -= super.getVariance().getUpper() / randomChangeRate;
                     }
                     getTerrainComponent().setSize(size);
-                    terrainFrame = getTerrainComponent().paint(terrainFrame, location, paintFlag);
                     location.setX(location.getX() + super.getDirection().getDx());
                     location.setY(location.getY() + super.getDirection().getDy());
+                    terrainFrame = getTerrainComponent().paint(terrainFrame, location, paintFlag);
                 } else {
-                    location.setX(location.getX() - super.getDirection().getDx());
-                    location.setY(location.getY() - super.getDirection().getDy());
+                    break;
                 }
             }
         }

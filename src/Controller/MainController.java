@@ -1,12 +1,18 @@
 package Controller;
 
+import Simulation.Environment.Location;
 import Simulation.Simulation;
 import Simulation.SimulationUtility.SimulationSettings.*;
+import Simulation.SimulationUtility.Terrain.*;
+import Simulation.SimulationUtility.Terrain.Point;
 import View.UserInterface;
 import org.apache.commons.io.FilenameUtils;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -58,7 +64,7 @@ public class MainController {
      * @param energyRegenAmount initial energy regeneration amount
      * @throws IOException in the event the loadingDialog image cannot be found
      */
-    public MainController(int size, int minEnergyLevel, int maxEnergyLevel, double energyRegenChance, int energyRegenAmount) throws IOException {
+    public MainController(int size, int minEnergyLevel, int maxEnergyLevel, double energyRegenChance, int energyRegenAmount) throws IOException, InterruptedException {
         this.viewController = new ViewController();
         this.fileHandler = new FileHandler();
         viewController.showLoadingDialog();
@@ -68,7 +74,7 @@ public class MainController {
         this.simulationController = new SimulationController();
         simulationController.initDiagnostics();
         initController();
-        //fileHandler.loadOnOpen();
+        fileHandler.loadOnOpen();
         viewController.initView();
         viewController.deleteLoadingDialog();
         this.runFlag = false;
@@ -120,10 +126,8 @@ public class MainController {
         userInterface.getLoadTerrainMenuButton().addActionListener(e -> fileHandler.loadTerrainMask());
         userInterface.getToggleControlsButton().addActionListener(e -> viewController.toggleControls());
         userInterface.getTerrainSettings().addActionListener(e -> viewController.openTerrainSettings());
-        userInterface.getClearTerrain().addActionListener(e -> simulationController.clearTerrain());
-        userInterface.getClearTerrain().addActionListener(e -> simulationController.clearTerrain());
-        userInterface.getFillTerrain().addActionListener(e -> simulationController.fillTerrain());
-        userInterface.getClearTerrain().addActionListener(e -> simulationController.clearTerrain());
+        userInterface.getClearTerrain().addActionListener(e -> simulationController.getTerrainController().clearTerrain());
+        userInterface.getFillTerrain().addActionListener(e -> simulationController.getTerrainController().fillTerrain());
         userInterface.getGenerateCave().addActionListener(e -> simulationController.paintCave());
         userInterface.getGenerateCaveSystem().addActionListener(e -> simulationController.paintCaveSystem());
         userInterface.getPreset1Button().addActionListener(e -> fileHandler.loadPreset(0));
@@ -138,7 +142,55 @@ public class MainController {
                 fileHandler.saveOnClose();
             }
         });
+        userInterface.getToggleRightPanelButton().addActionListener(e -> userInterface.toggleRightPanel());
+        userInterface.getToggleLeftPanelButton().addActionListener(e -> userInterface.toggleLeftPanel());
+        userInterface.getTerrainControlPanel().getFillButton().addActionListener(e -> simulationController.getTerrainController().paintTerrain(0));
+        userInterface.getTerrainControlPanel().getClearButton().addActionListener(e -> simulationController.getTerrainController().paintTerrain(1));
+        ((JButton) userInterface.getTerrainControlPanel().getPaintPointButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(2));
+        ((JButton) userInterface.getTerrainControlPanel().getPaintSquareButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(3));
+        ((JButton) userInterface.getTerrainControlPanel().getPaintCircleButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(4));
+        ((JButton) userInterface.getTerrainControlPanel().getPaintLineButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(5));
+        ((JButton) userInterface.getTerrainControlPanel().getPaintBendingLineButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(6));
+        userInterface.getSimulationPanel().addMouseListener(new MouseListener());
+        userInterface.getTerrainControlPanel().getSizeSpinner().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                simulationController.getTerrainController().setSize(userInterface.getTerrainControlPanel().getSizeValue());
+            }
+        });
 
+    }
+
+    public class MouseListener implements java.awt.event.MouseListener {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (SwingUtilities.isLeftMouseButton(e)) {
+                userInterface.getTerrainControlPanel().setLocation1Value(new Location(e.getX(), e.getY()));
+            }
+            if (SwingUtilities.isRightMouseButton(e)) {
+                userInterface.getTerrainControlPanel().setLocation2Value(new Location(e.getX(), e.getY()));
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
     }
 
     /**
@@ -174,6 +226,17 @@ public class MainController {
      * @since 1.0a
      */
     public class SimulationController {
+
+        private final TerrainController terrainController;
+
+        public SimulationController() {
+            this.terrainController = new TerrainController();
+        }
+
+        public TerrainController getTerrainController() {
+            return terrainController;
+        }
+
         /**
          * Starts the simulation if it's not running, otherwise stops it.
          */
@@ -383,28 +446,34 @@ public class MainController {
         }
 
         /**
-         * Clears the environment of all terrain.
-         */
-        public void clearTerrain() {
-            simulation.getTerrainGenerator().clearTerrain();
-            viewController.updateSimulationView();
-            viewController.logMsg("[TERRAIN]: Terrain cleared.");
-        }
-
-        /**
-         * Sets the environment to all terrain.
-         */
-        public void fillTerrain() {
-            simulation.getTerrainGenerator().fillTerrain();
-            viewController.updateSimulationView();
-            viewController.logMsg("[TERRAIN]: Terrain filled.");
-        }
-
-        /**
          * paints a cave on the environment.
          */
         public void paintCave() {
-            simulation.getTerrainGenerator().paintTerrain();
+//            Square square300 = new Square(new Point(), 300);
+//            Square square275 = new Square(new Point(), 275);
+//            Square square250 = new Square(new Point(), 250);
+//            Square square225 = new Square(new Point(), 225);
+//            Square square200 = new Square(new Point(), 200);
+//            Square square175 = new Square(new Point(), 175);
+//            Square square150 = new Square(new Point(), 150);
+//            Square square125 = new Square(new Point(), 125);
+//            Square square100 = new Square(new Point(), 100);
+//            Square square75 = new Square(new Point(), 75);
+//            Square square50 = new Square(new Point(), 50);
+//            Square square25 = new Square(new Point(), 25);
+//            simulation.getTerrainGenerator().fillTerrain();
+//            //simulation.getTerrainGenerator().paintTerrain(square300, false);
+//            simulation.getTerrainGenerator().paintTerrain(square275, false);
+//            simulation.getTerrainGenerator().paintTerrain(square250, true);
+//            simulation.getTerrainGenerator().paintTerrain(square225, false);
+//            simulation.getTerrainGenerator().paintTerrain(square200, true);
+//            simulation.getTerrainGenerator().paintTerrain(square175, false);
+//            simulation.getTerrainGenerator().paintTerrain(square150, true);
+//            simulation.getTerrainGenerator().paintTerrain(square125, false);
+//            simulation.getTerrainGenerator().paintTerrain(square100, true);
+//            simulation.getTerrainGenerator().paintTerrain(square75, false);
+//            simulation.getTerrainGenerator().paintTerrain(square50, true);
+//            //simulation.getTerrainGenerator().paintTerrain(square25, true);
             viewController.updateSimulationView();
             viewController.logMsg("[TERRAIN]: Cave generated with - \n" + simulation.getTerrainGenerator().getTerrainSettings().toString());
         }
@@ -415,6 +484,75 @@ public class MainController {
         public void paintCaveSystem() {
             viewController.updateSimulationView();
             viewController.logMsg("[TERRAIN]: Cave System generated with - \n" + simulation.getTerrainGenerator().getTerrainSettings().toString());
+        }
+
+        public class TerrainController {
+
+            private int size;
+
+            public TerrainController() {
+                size = 100;
+            }
+
+            public void paintTerrain(int shapeID) {
+                Location location = userInterface.getTerrainControlPanel().getLocation1Value();
+                boolean paintFlag = userInterface.getTerrainControlPanel().getPaintFlagValue();
+                switch (shapeID) {
+                    case 0 -> simulation.getTerrainGenerator().fillTerrain();
+                    case 1 -> simulation.getTerrainGenerator().clearTerrain();
+                    case 2 -> simulation.getTerrainGenerator().paintTerrain(new Point(), paintFlag, location);
+                    case 3 -> simulation.getTerrainGenerator().paintTerrain(new Square(new Point(), size), paintFlag, location);
+                    case 4 -> simulation.getTerrainGenerator().paintTerrain(new Circle(new Point(), size), paintFlag, location);
+                    case 5 -> simulation.getTerrainGenerator().paintTerrain(new RandomVariableBasicLine(
+                            new ClusterCircle(new Circle(new Point(), 2), 5, 1500), size,
+                                    new Direction(userInterface.getTerrainControlPanel().getDxValue(), userInterface.getTerrainControlPanel().getDyValue()),
+                                    new Variance(userInterface.getTerrainControlPanel().getUpperBoundValue(),
+                                            userInterface.getTerrainControlPanel().getLowerBoundValue(),
+                                            userInterface.getTerrainControlPanel().getVarianceValue())),
+                            paintFlag, location);
+//                    case 5 ->
+//                        simulation.getTerrainGenerator().paintTerrain(new BasicLine(new Circle(new Point(), 5), size,
+//                                new Direction(userInterface.getTerrainControlPanel().getDxValue(), userInterface.getTerrainControlPanel().getDyValue())),
+//                                paintFlag,
+//                                location);
+                    case 6 -> simulation.getTerrainGenerator().paintTerrain(new BendingCompoundLine(new RandomVariableBasicLine(
+                                    new ClusterCircle(new Circle(new Point(), 2), 5, 1500), size/10,
+                                    new Direction(userInterface.getTerrainControlPanel().getDxValue(), userInterface.getTerrainControlPanel().getDyValue()),
+                                    new Variance(userInterface.getTerrainControlPanel().getUpperBoundValue(),
+                                            userInterface.getTerrainControlPanel().getLowerBoundValue(),
+                                            userInterface.getTerrainControlPanel().getVarianceValue())),
+                                    size, new Direction(userInterface.getTerrainControlPanel().getDxBendRangeValue(), userInterface.getTerrainControlPanel().getDyBendRangeValue()),
+                                    10000),
+                            paintFlag, location);
+                }
+                viewController.updateView();
+            }
+
+            /**
+             * Clears the environment of all terrain.
+             */
+            public void clearTerrain() {
+                simulation.getTerrainGenerator().clearTerrain();
+                viewController.updateSimulationView();
+                viewController.logMsg("[TERRAIN]: Terrain cleared.");
+            }
+
+            /**
+             * Sets the environment to all terrain.
+             */
+            public void fillTerrain() {
+                simulation.getTerrainGenerator().fillTerrain();
+                viewController.updateSimulationView();
+                viewController.logMsg("[TERRAIN]: Terrain filled.");
+            }
+
+            public int getSize() {
+                return size;
+            }
+
+            public void setSize(int size) {
+                this.size = size;
+            }
         }
     }
 
@@ -509,6 +647,7 @@ public class MainController {
             viewController.updateEnvironmentSettingsPanel();
             viewController.updateDiagnosticsPanel();
             userInterface.setVisible(true);
+            toggleControls();
         }
 
         /**
@@ -562,6 +701,7 @@ public class MainController {
             userInterface.getSimulationControlPanel().getPopulateButton().setEnabled(!toggle);
             userInterface.getSimulationControlPanel().getRunNStepsButton().setEnabled(!toggle);
         }
+
     }
 
     /**
@@ -972,3 +1112,4 @@ public class MainController {
     }
 
 }
+

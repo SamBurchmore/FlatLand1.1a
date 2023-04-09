@@ -58,6 +58,7 @@ public class Simulation {
         this.agentEditor = new AgentEditor();
         this.agentLogic = new AgentLogic();
         this.terrainGenerator = new TerrainGenerator();
+
     }
 
     /**
@@ -444,8 +445,8 @@ public class Simulation {
             }
         }
 
-        public void paintTerrain() {
-            environment = bendingCompoundLine.paint(new TerrainFrame(environment, null), new Location(random.nextInt(600), random.nextInt(600)), true).getEnvironment();
+        public void paintTerrain(Terrain terrain, boolean paintFlag, Location location) {
+            environment = terrain.paint(new TerrainFrame(environment, location), location, paintFlag).getEnvironment();
         }
 
         public TerrainSettings getTerrainSettings() {

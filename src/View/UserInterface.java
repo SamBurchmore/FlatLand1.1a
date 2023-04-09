@@ -41,6 +41,8 @@ public class UserInterface extends JFrame {
     private final JButton preset6Button;
 
     private final JButton toggleControlsButton;
+    private final JButton toggleRightPanelButton;
+    private final JButton toggleLeftPanelButton;
 
     private final JButton clearTerrain;
     private final JButton fillTerrain;
@@ -58,11 +60,15 @@ public class UserInterface extends JFrame {
     private final JPanel leftPanel;
     private final JPanel rightPanel;
 
+    private final TerrainControlPanel terrainControlPanel;
+
     public UserInterface() throws IOException {
         setName("FlatLand 1.0a");
         getContentPane().setLayout(new FlowLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setIconImage(ImageIO.read((new File("src\\images\\tool-icon-v1.png").toURI()).toURL()));
+
+        terrainControlPanel = new TerrainControlPanel();
 
         // Build the file chooser, ensuring it filters for the .dat file extension
         fileChooser = new JFileChooser();
@@ -123,6 +129,12 @@ public class UserInterface extends JFrame {
         // Build the tool settings menu
         toggleControlsButton = new JButton("Toggle Controls");
         toolSettingsMenu.add(toggleControlsButton);
+
+        toggleRightPanelButton = new JButton("Toggle Right Panel");
+        toolSettingsMenu.add(toggleRightPanelButton);
+
+        toggleLeftPanelButton = new JButton("Toggle Left Panel");
+        toolSettingsMenu.add(toggleLeftPanelButton);
 
         generateCave = new JButton("Generate Cave");
         terrainMenu.add(generateCave);
@@ -208,6 +220,16 @@ public class UserInterface extends JFrame {
         leftPanel.setVisible(!leftPanel.isVisible());
         agentSelectorPanel.setVisible(!agentSelectorPanel.isVisible());
         simulationControlPanel.setVisible(!simulationControlPanel.isVisible());
+        pack();
+    }
+
+    public void toggleRightPanel() {
+        rightPanel.setVisible(!rightPanel.isVisible());
+        pack();
+    }
+
+    public void toggleLeftPanel() {
+        leftPanel.setVisible(!leftPanel.isVisible());
         pack();
     }
 
@@ -329,5 +351,21 @@ public class UserInterface extends JFrame {
 
     public JButton getLoadTerrainMenuButton() {
         return loadTerrainMenuButton;
+    }
+
+    public JButton getToggleRightPanelButton() {
+        return toggleRightPanelButton;
+    }
+
+    public JButton getToggleLeftPanelButton() {
+        return toggleLeftPanelButton;
+    }
+
+    public TerrainControlPanel getTerrainControlPanel() {
+        return terrainControlPanel;
+    }
+
+    public SimulationPanel getSimulationPanel() {
+        return simulationPanel;
     }
 }
