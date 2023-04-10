@@ -151,6 +151,7 @@ public class MainController {
         ((JButton) userInterface.getTerrainControlPanel().getPaintCircleButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(4));
         ((JButton) userInterface.getTerrainControlPanel().getPaintLineButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(5));
         ((JButton) userInterface.getTerrainControlPanel().getPaintBendingLineButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(6));
+        ((JButton) userInterface.getTerrainControlPanel().getPaintRadiantLineButton()).addActionListener(e -> simulationController.getTerrainController().paintTerrain(7));
         userInterface.getSimulationPanel().addMouseListener(new MouseListener());
         userInterface.getTerrainControlPanel().getSizeSpinner().addChangeListener(new ChangeListener() {
             @Override
@@ -524,6 +525,17 @@ public class MainController {
                                     size, new Direction(userInterface.getTerrainControlPanel().getDxBendRangeValue(), userInterface.getTerrainControlPanel().getDyBendRangeValue()),
                                     10000),
                             paintFlag, location);
+                    case 7 -> simulation.getTerrainGenerator().paintTerrain(new RandomRadiantLine(new RandomVariableBasicLine(
+                            new ClusterCircle(new Circle(new Point(), 2), 5, 1500), size,
+                            new Direction(userInterface.getTerrainControlPanel().getDxValue(), userInterface.getTerrainControlPanel().getDyValue()),
+                            new Variance(userInterface.getTerrainControlPanel().getUpperBoundValue(),
+                                    userInterface.getTerrainControlPanel().getLowerBoundValue(),
+                                    userInterface.getTerrainControlPanel().getVarianceValue())),
+                            size,
+                            new Direction(0, 0),
+                            5,
+                            3
+                            ), paintFlag, location);
                 }
                 viewController.updateView();
             }

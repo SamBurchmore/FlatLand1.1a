@@ -504,5 +504,8 @@ public class Simulation {
         return terrainGenerator;
     }
 
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
 }
 

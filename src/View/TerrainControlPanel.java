@@ -17,6 +17,7 @@ public class TerrainControlPanel extends JFrame {
     private final SquareButton paintCircleButton;
     private final SquareButton paintLineButton;
     private final SquareButton paintBendingLineButton;
+    private final SquareButton paintRadiantLineButton;
 
     private final JToggleButton togglePaintFlagButton;
     private final JSpinner x1LocationSpinner;
@@ -64,6 +65,7 @@ public class TerrainControlPanel extends JFrame {
         paintCircleButton = new SquareButton("Paint Circle");
         paintLineButton = new SquareButton("Paint Line");
         paintBendingLineButton = new SquareButton("Paint Bending Line");
+        paintRadiantLineButton = new SquareButton("Paint Radiant Line");
 //        buttonGroup.add(paintPointButton);
 //        buttonGroup.add(paintSquareButton);
 //        buttonGroup.add(paintCircleButton);
@@ -72,6 +74,7 @@ public class TerrainControlPanel extends JFrame {
         shapePanel.add(paintCircleButton);
         shapePanel.add(paintLineButton);
         shapePanel.add(paintBendingLineButton);
+        shapePanel.add(paintRadiantLineButton);
 
         JPanel settingsPanel = new JPanel(new GridLayout(6, 3));
         togglePaintFlagButton = new JToggleButton("Toggle Paint");
@@ -299,5 +302,9 @@ public class TerrainControlPanel extends JFrame {
 
     public JSpinner getSizeSpinner() {
         return sizeSpinner;
+    }
+
+    public SquareButton getPaintRadiantLineButton() {
+        return paintRadiantLineButton;
     }
 }

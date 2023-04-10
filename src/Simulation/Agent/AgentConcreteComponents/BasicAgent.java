@@ -153,7 +153,7 @@ public class BasicAgent implements Agent {
      */
     @Override
     public void predate(Scores preyScores) {
-        getScores().setEnergy(getScores().getEnergy() + preyScores.getEnergy());
+        getScores().setEnergy(getScores().getEnergy() + (preyScores.getEnergy() * 5));
     }
 
     /**
